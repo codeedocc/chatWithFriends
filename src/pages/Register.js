@@ -17,7 +17,7 @@ function Register() {
             <span>Выбрать аватарку</span>
           </label>
           <button>Зарегистрироваться</button>
-          <p>Нет аккаунта? Авторизация</p>
+          <p>Уже есть аккаунт? Войти</p>
         </form>
       </div>
     </div>
