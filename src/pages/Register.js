@@ -13,7 +13,7 @@ function Register() {
           <input type="password" placeholder="Пароль"></input>
           <input style={{ display: 'none' }} type="file" id="file"></input>
           <label htmlFor="file">
-            <img src={AddAvatar}></img>
+            <img src={AddAvatar} alt="img for register"></img>
             <span>Выбрать аватарку</span>
           </label>
           <button>Зарегистрироваться</button>
