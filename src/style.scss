@@ -205,6 +205,18 @@
           cursor: pointer;
         }
       }
+
+      .messages {
+        background-color: #ddddf7;
+        padding: 10px;
+        height: calc(100% - 160px);
+      }
+
+      .input {
+        height: 50px;
+        background-color: white;
+        padding: 10px;
+      }
     }
   }
 }
