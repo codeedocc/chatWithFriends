@@ -11,9 +11,9 @@ const Chat = () => {
       <div className="chatInfo">
         <span>Ruslan</span>
         <div className="chatIcons">
-          <img src={Cam} alt="" />
-          <img src={Add} alt="" />
-          <img src={More} alt="" />
+          <img src={Cam} alt="cam" />
+          <img src={Add} alt="add" />
+          <img src={More} alt="more" />
         </div>
       </div>
       <Messages />

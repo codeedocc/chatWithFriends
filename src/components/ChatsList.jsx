@@ -5,21 +5,21 @@ const ChatsList = () => {
   return (
     <div className="chats">
       <div className="userChat">
-        <img src={Face} alt="user photo" />
+        <img src={Face} alt="user" />
         <div className="userChatInfo">
           <span>Ruslan</span>
           <p>Hello </p>
         </div>
       </div>
       <div className="userChat">
-        <img src={Face} alt="user photo" />
+        <img src={Face} alt="user" />
         <div className="userChatInfo">
           <span>Ruslan</span>
           <p>Hello </p>
         </div>
       </div>
       <div className="userChat">
-        <img src={Face} alt="user photo" />
+        <img src={Face} alt="user" />
         <div className="userChatInfo">
           <span>Ruslan</span>
           <p>Hello </p>

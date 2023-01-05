@@ -7,10 +7,10 @@ const Input = () => {
     <div className="input">
       <input type="text" placeholder="Написать сообщение..." />
       <div className="send">
-        <img src={Attach} alt="add attach png" />
+        <img src={Attach} alt="add attach" />
         <input type="file" style={{ display: 'none' }} id="file" />
         <label htmlFor="file">
-          <img src={Img} alt="add pic png" />
+          <img src={Img} alt="add pic" />
         </label>
         <button>Отправить</button>
       </div>
