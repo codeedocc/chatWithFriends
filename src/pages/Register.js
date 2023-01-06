@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { auth, db, storage } from '../firebase'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { doc, setDoc } from 'firebase/firestore'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Register() {
   const [err, setErr] = useState(false)
@@ -69,7 +69,9 @@ function Register() {
           </label>
           <button>Зарегистрироваться</button>
           {err && <span>Что-то пошло не так...</span>}
-          <p>Уже есть аккаунт? Войти</p>
+          <p>
+            Уже есть аккаунт? <Link to="/login">Войти</Link>
+          </p>
         </form>
       </div>
     </div>
