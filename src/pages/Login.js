@@ -29,7 +29,7 @@ function Login() {
           <input type="email" placeholder="Email"></input>
           <input type="password" placeholder="Пароль"></input>
           <button>Войти</button>
-          {err && <span>Что-то пошло не так...</span>}
+          {err && <span>Вы ввели неверные данные...</span>}
           <p>
             Нет аккаунта?{' '}
             <Link to="/chatWithFriends/register">Зарегистрироваться</Link>

@@ -193,7 +193,7 @@
         border-bottom: 1px solid gray;
 
         .searchForm {
-          padding: 10px;
+          padding: 20px 10px 10px 10px;
 
           input {
             background-color: transparent;
@@ -210,7 +210,7 @@
       }
 
       .userChat {
-        padding: 10px;
+        padding: 25px 10px 10px 10px;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -313,6 +313,7 @@
               padding: 10px 20px;
               border-radius: 0px 10px 10px 10px;
               max-width: max-content;
+              border: 1px solid rgba(0, 0, 0, 0.233);
             }
 
             img {
