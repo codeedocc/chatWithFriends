@@ -56,7 +56,7 @@ function Register() {
   return (
     <div className="formContainer">
       <div className="formWrapper">
-        <span className="logo">TALK Чат</span>
+        <span className="logo">TALK</span>
         <span className="title">Регистрация</span>
         <form onSubmit={handleSubmit}>
           <input type="text" placeholder="Имя"></input>
