@@ -88,6 +88,7 @@ const Search = () => {
           placeholder="Найти пользователя..."
           onChange={(e) => setUserName(e.target.value)}
           onKeyDown={handlePress}
+          value={userName}
         />
       </div>
       {err && <span>Что-то пошло не так...</span>}
