@@ -10,7 +10,7 @@ function App() {
 
   const ProtectedRoute = ({ children }) => {
     if (!currentUser) {
-      return <Navigate to="/login" />
+      return <Navigate to="/chatWithFriends" />
     }
 
     return children
@@ -19,17 +19,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" />
         <Route
-          index
+          path="/chatWithFriends/homepage"
           element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
           }
         />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
+        <Route path="/chatWithFriends" element={<Login />} />
+        <Route path="/chatWithFriends/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   )

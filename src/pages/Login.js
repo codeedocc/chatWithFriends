@@ -14,7 +14,7 @@ function Login() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password)
-      navigate('/')
+      navigate('/chatWithFriends/homepage')
     } catch (err) {
       setErr(true)
     }
@@ -31,7 +31,8 @@ function Login() {
           <button>Войти</button>
           {err && <span>Что-то пошло не так...</span>}
           <p>
-            Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
+            Нет аккаунта?{' '}
+            <Link to="/chatWithFriends/register">Зарегистрироваться</Link>
           </p>
         </form>
       </div>

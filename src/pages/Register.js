@@ -41,7 +41,7 @@ function Register() {
             })
             //create empty user chats on firestore
             await setDoc(doc(db, 'userChats', res.user.uid), {})
-            navigate('/')
+            navigate('/chatWithFriends/homepage')
           } catch (err) {
             console.log(err)
             setErr(true)
@@ -70,7 +70,7 @@ function Register() {
           <button>Зарегистрироваться</button>
           {err && <span>Что-то пошло не так...</span>}
           <p>
-            Уже есть аккаунт? <Link to="/login">Войти</Link>
+            Уже есть аккаунт? <Link to="/chatWithFriends">Войти</Link>
           </p>
         </form>
       </div>
