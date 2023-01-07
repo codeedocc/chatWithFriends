@@ -16,7 +16,7 @@ import { useContext } from 'react'
 import { AuthContext } from '../context/AuthContext'
 
 const Search = () => {
-  const [userName, setUserName] = useState('')
+  const [username, setUsername] = useState('')
   const [user, setUser] = useState(null)
   const [err, setErr] = useState(false)
 
@@ -25,7 +25,7 @@ const Search = () => {
   const handleSearch = async () => {
     const q = query(
       collection(db, 'users'),
-      where('displayName', '==', userName)
+      where('displayName', '==', username)
     )
 
     try {
@@ -38,7 +38,7 @@ const Search = () => {
     }
   }
 
-  const handlePress = (e) => {
+  const handleKey = (e) => {
     e.code === 'Enter' && handleSearch()
   }
 
@@ -77,24 +77,23 @@ const Search = () => {
     } catch (err) {}
 
     setUser(null)
-    setUserName('')
+    setUsername('')
   }
-
   return (
     <div className="search">
       <div className="searchForm">
         <input
           type="text"
-          placeholder="Найти пользователя..."
-          onChange={(e) => setUserName(e.target.value)}
-          onKeyDown={handlePress}
-          value={userName}
+          placeholder="Найти пользователя"
+          onKeyDown={handleKey}
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
         />
       </div>
-      {err && <span>Что-то пошло не так...</span>}
+      {err && <span>Пользователь не найден</span>}
       {user && (
         <div className="userChat" onClick={handleSelect}>
-          <img src={user.photoURL} alt="user" />
+          <img src={user.photoURL} alt="" />
           <div className="userChatInfo">
             <span>{user.displayName}</span>
           </div>
