@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className="navbar">
       <span className="logo">TALK</span>
       <div className="user">
-        <img src={currentUser.photoURL} />
+        <img src={currentUser.photoURL} alt="user" />
         <span>{currentUser.displayName}</span>
         <button onClick={() => signOut(auth)}>Выйти</button>
       </div>

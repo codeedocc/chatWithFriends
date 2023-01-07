@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Face from '../assets/img/1.jpg'
 import {
   collection,
   doc,
