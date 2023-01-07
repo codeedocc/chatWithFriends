@@ -30,13 +30,14 @@ const Input = () => {
       uploadTask.on(
         (error) => {
           //TODO:Handle Error
+          console.log(error)
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
             await updateDoc(doc(db, 'chats', data.chatId), {
               messages: arrayUnion({
                 id: uuid(),
-                text,
+                text: 'Картинка',
                 senderId: currentUser.uid,
                 date: Timestamp.now(),
                 img: downloadURL,
@@ -45,7 +46,11 @@ const Input = () => {
           })
         }
       )
-    } else {
+
+      setImg(null)
+    }
+
+    if (text !== '') {
       await updateDoc(doc(db, 'chats', data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -54,25 +59,25 @@ const Input = () => {
           date: Timestamp.now(),
         }),
       })
+
+      await updateDoc(doc(db, 'userChats', currentUser.uid), {
+        [data.chatId + '.lastMessage']: {
+          text,
+        },
+        [data.chatId + '.date']: serverTimestamp(),
+      })
+
+      await updateDoc(doc(db, 'userChats', data.user.uid), {
+        [data.chatId + '.lastMessage']: {
+          text,
+        },
+        [data.chatId + '.date']: serverTimestamp(),
+      })
+
+      setText('')
     }
-
-    await updateDoc(doc(db, 'userChats', currentUser.uid), {
-      [data.chatId + '.lastMessage']: {
-        text,
-      },
-      [data.chatId + '.date']: serverTimestamp(),
-    })
-
-    await updateDoc(doc(db, 'userChats', data.user.uid), {
-      [data.chatId + '.lastMessage']: {
-        text,
-      },
-      [data.chatId + '.date']: serverTimestamp(),
-    })
-
-    setText('')
-    setImg(null)
   }
+
   return (
     <div className="input">
       <input
