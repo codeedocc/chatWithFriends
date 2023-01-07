@@ -15,7 +15,13 @@ function Register() {
     const displayName = e.target[0].value
     const email = e.target[1].value
     const password = e.target[2].value
-    const file = e.target[3].files[0]
+    const passwordAgain = e.target[3].value
+    const file = e.target[4].files[0]
+
+    if (password !== passwordAgain) {
+      alert('Пароли не совпадают')
+      return
+    }
 
     try {
       //Create user
@@ -62,6 +68,7 @@ function Register() {
           <input type="text" placeholder="Имя"></input>
           <input type="email" placeholder="Email"></input>
           <input type="password" placeholder="Пароль"></input>
+          <input type="password" placeholder="Повторите пароль"></input>
           <input style={{ display: 'none' }} type="file" id="file"></input>
           <label htmlFor="file">
             <img src={AddAvatar} alt="img for register"></img>
