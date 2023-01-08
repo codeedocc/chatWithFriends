@@ -23,6 +23,11 @@ function Register() {
       return
     }
 
+    if (file === undefined) {
+      alert('Пожалуйста, выберите аватарку')
+      return
+    }
+
     try {
       //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password)
