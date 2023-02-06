@@ -5,11 +5,11 @@ import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_SECRET_KEY,
-  authDomain: 'advanced-chat-app-4c67a.firebaseapp.com',
-  projectId: 'advanced-chat-app-4c67a',
-  storageBucket: 'advanced-chat-app-4c67a.appspot.com',
-  messagingSenderId: '604278974782',
-  appId: '1:604278974782:web:0eeca72c825271b394e46f',
+  authDomain: 'evolved-chat-3eca0.firebaseapp.com',
+  projectId: 'evolved-chat-3eca0',
+  storageBucket: 'evolved-chat-3eca0.appspot.com',
+  messagingSenderId: '594413652034',
+  appId: '1:594413652034:web:6480fda8e5f32b2fbcc5db',
 }
 
 export const app = initializeApp(firebaseConfig)
