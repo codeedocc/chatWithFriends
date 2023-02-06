@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/chatWithFriends/static/css/main.82ac4022.css",
+    "main.css": "/chatWithFriends/static/css/main.335ca114.css",
     "main.js": "/chatWithFriends/static/js/main.87161380.js",
     "static/media/logout.png": "/chatWithFriends/static/media/logout.e8250be679cbeb1a3ed4.png",
     "index.html": "/chatWithFriends/index.html",
-    "main.82ac4022.css.map": "/chatWithFriends/static/css/main.82ac4022.css.map",
+    "main.335ca114.css.map": "/chatWithFriends/static/css/main.335ca114.css.map",
     "main.87161380.js.map": "/chatWithFriends/static/js/main.87161380.js.map"
   },
   "entrypoints": [
-    "static/css/main.82ac4022.css",
+    "static/css/main.335ca114.css",
     "static/js/main.87161380.js"
   ]
 }
