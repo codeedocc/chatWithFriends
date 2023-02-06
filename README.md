@@ -1,1 +1,1 @@
-https://codeedocc.github.io/chatWithFriends/
+Проект: https://codeedocc.github.io/chatWithFriends/
