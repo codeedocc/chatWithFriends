@@ -50,7 +50,7 @@ const Input = () => {
       setImg(null)
     }
 
-    if (text !== '') {
+    if (text.trim() !== '') {
       await updateDoc(doc(db, 'chats', data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -76,6 +76,8 @@ const Input = () => {
 
       setText('')
     }
+
+    setText('')
   }
 
   return (
