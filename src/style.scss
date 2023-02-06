@@ -21,6 +21,12 @@
   }
 }
 
+@mixin logo {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
 .formContainer {
   background-blend-mode: screen;
   background: linear-gradient(limegreen, transparent),
@@ -81,15 +87,11 @@
         font-weight: bold;
         border: none;
         cursor: pointer;
-      }
+        transition: background-color 0.22s ease-in-out;
 
-      button:hover {
-        background-color: #303953;
-        color: white;
-        padding: 10px;
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
+        &:hover {
+          background-color: #303953;
+        }
       }
 
       label {
@@ -102,6 +104,11 @@
 
         img {
           width: 32px;
+          transition: scale 0.22s ease-in-out;
+
+          &:hover {
+            scale: 1.15;
+          }
         }
       }
 
@@ -160,7 +167,10 @@
           padding-left: 20px;
           position: absolute;
           bottom: 10px;
-          left: 0;
+
+          @include logo {
+            left: 0;
+          }
         }
 
         .user {
