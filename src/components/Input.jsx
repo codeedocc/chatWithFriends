@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import Send from '../assets/img/send.png'
 import Attach from '../assets/img/attach.png'
 import { AuthContext } from '../context/AuthContext'
@@ -17,11 +17,14 @@ import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 const Input = () => {
   const [text, setText] = useState('')
   const [img, setImg] = useState(null)
+  const inputRef = useRef()
 
   const { currentUser } = useContext(AuthContext)
   const { data } = useContext(ChatContext)
 
-  const handleSend = async () => {
+  const handleSend = async (e) => {
+    e.preventDefault()
+
     if (img) {
       const storageRef = ref(storage, uuid())
 
@@ -78,32 +81,36 @@ const Input = () => {
     }
 
     setText('')
+    inputRef.current.focus()
   }
 
   return (
-    <div className="input">
-      <input
-        type="text"
-        placeholder="Написать сообщение..."
-        onChange={(e) => setText(e.target.value)}
-        value={text}
-      />
-      <div className="send">
+    <form onSubmit={handleSend}>
+      <div className="input">
         <input
-          type="file"
-          style={{ display: 'none' }}
-          id="file"
-          onChange={(e) => setImg(e.target.files[0])}
+          ref={inputRef}
+          type="text"
+          placeholder="Написать сообщение..."
+          onChange={(e) => setText(e.target.value)}
+          value={text}
         />
-        <label htmlFor="file">
-          <img src={Attach} alt="" />
-        </label>
-        <button id="sender" style={{ display: 'none' }} />
-        <label htmlFor="sender">
-          <img src={Send} alt="send" onClick={handleSend} />
-        </label>
+        <div className="send">
+          <input
+            type="file"
+            style={{ display: 'none' }}
+            id="file"
+            onChange={(e) => setImg(e.target.files[0])}
+          />
+          <label htmlFor="file">
+            <img src={Attach} alt="" />
+          </label>
+          <button type="submit" id="sender" style={{ display: 'none' }} />
+          <label htmlFor="sender">
+            <img src={Send} alt="send" />
+          </label>
+        </div>
       </div>
-    </div>
+    </form>
   )
 }
 
